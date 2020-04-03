@@ -57,8 +57,8 @@ http://metastudiohq.com
 * Configuration
   Database settings:
   - Copy file `./config/.env.local.example` to your file `./config/local.env` and fill strings:
-  `DATABASE_USER_NAME`, `DATABASE_PASSWORD`.
-
+    - Database autentication: `DATABASE_USER_NAME`, `DATABASE_PASSWORD`.
+    - Categories: `AGE_CATEGORIES`, `NEWS_CATEGORIES` - as delimited with comma strings
 
 * Database creation && initialization
   ```bash
@@ -67,6 +67,11 @@ http://metastudiohq.com
   ```
 
 * How to run the test suite
-  ```
+  ```bash
   bundle exec rspec
+  ```
+
+  Also, probably you need to initialize test db:
+  ```bash
+  rails db:migrate RAILS_ENV=test
   ```
