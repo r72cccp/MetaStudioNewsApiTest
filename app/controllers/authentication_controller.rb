@@ -5,7 +5,6 @@ class AuthenticationController < ApiController
   before_action :init_current_user
 
   def authenticate
-    Rails.logger.ap 'safe_params[:email]': safe_params[:email], 'safe_params[:password]': safe_params[:password]
     command = ::AuthenticateUser.call(safe_params[:email], safe_params[:password])
     user_exists = User.find_by(email: safe_params[:email])
     if command.success?
@@ -42,7 +41,6 @@ class AuthenticationController < ApiController
       :password
     )
     @safe_params[:email] = @safe_params[:email].downcase if @safe_params[:email]
-    Rails.logger.ap '@safe_params': @safe_params
     @safe_params
   end
 end
