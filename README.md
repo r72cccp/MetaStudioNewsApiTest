@@ -75,3 +75,7 @@ http://metastudiohq.com
   ```bash
   rails db:migrate RAILS_ENV=test
   ```
+
+* Branch coverage
+  See the branch coverage report [here](https://htmlpreview.github.io/?https://github.com/r72cccp/MetaStudioNewsApiTest/blob/master/public/coverage/index.html).
+
