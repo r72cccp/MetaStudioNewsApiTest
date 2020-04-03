@@ -79,3 +79,9 @@ http://metastudiohq.com
 * Branch coverage
   See the branch coverage report [here](https://htmlpreview.github.io/?https://github.com/r72cccp/MetaStudioNewsApiTest/blob/master/public/coverage/index.html).
 
+* Deployments
+  Master branch of this application accessible on Heroku.
+  POST User Authenticate request available on [https://metastudio-news-api.herokuapp.com/authenticate](https://metastudio-news-api.herokuapp.com/authenticate),
+  for example.
+
+
