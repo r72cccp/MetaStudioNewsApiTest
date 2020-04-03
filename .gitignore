@@ -27,3 +27,4 @@
 /config/master.key
 
 /config/env.local
+/spec/examples.txt

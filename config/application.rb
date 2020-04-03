@@ -11,7 +11,6 @@ require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'action_mailbox/engine'
 require 'action_text/engine'
-# require 'action_view/railtie'
 require 'action_cable/engine'
 require 'rails/test_unit/railtie'
 
@@ -24,8 +23,9 @@ module NewsApi
     require 'dotenv'
     Dotenv.load('config/.env.local')
 
-    config.load_defaults 6.0
     config.api_only = true
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.debug_exception_response_format = :api
+    config.load_defaults 6.0
   end
 end

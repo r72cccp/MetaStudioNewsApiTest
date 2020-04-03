@@ -13,7 +13,7 @@ AllCops:
   TargetRubyVersion: 2.7.0
   # Include common Ruby source files.
   Include:
-  - 'app/**/*'
+  - 'app/**/*.rb'
   - '**/*.rake'
   - '**/config.ru'
   - '**/Gemfile'

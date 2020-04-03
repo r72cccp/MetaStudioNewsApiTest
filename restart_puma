@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -rf tmp/cache
+mkdir -p tmp/pids
+# mkdir -p tmp/sockets
+# rm -f tmp/sockets/*.sock
+kill -9 `cat tmp/pids/server.pid`
+rm -f tmp/pids/*.pid
+bundle exec puma -C config/puma.rb --daemon
