@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/r72cccp/MetaStudioNewsApiTest.svg?style=svg)](https://circleci.com/gh/r72cccp/MetaStudioNewsApiTest)
+
 # MetaStudioNewsApiTest
 Rails backend for MetaStudio test
 
