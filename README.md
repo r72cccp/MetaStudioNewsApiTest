@@ -49,7 +49,7 @@ http://metastudiohq.com
 После выполнения задания нужно прислать ссылку на репозитоий на GitHub или Bitbucket по адресу hr@metastudio.ru, указав свои контактные данные и количество потраченного на задание времени.
 
 
-## Установка api
+## Install Gems and dependencies
 * Ruby version:
   - > 2.7.0
 
@@ -62,13 +62,13 @@ http://metastudiohq.com
     - Database autentication: `DATABASE_USER_NAME`, `DATABASE_PASSWORD`.
     - Categories: `AGE_CATEGORIES`, `NEWS_CATEGORIES` - as delimited with comma strings
 
-* Database creation && initialization
+## Database creation && initialization
   ```bash
   rails db:create
   rails db:migrate
   ```
 
-* How to run the test suite
+## How to run the test suite
   ```bash
   bundle exec rspec
   ```
@@ -78,12 +78,10 @@ http://metastudiohq.com
   rails db:migrate RAILS_ENV=test
   ```
 
-* Branch coverage
+## Branch coverage
   See the branch coverage report [here](https://htmlpreview.github.io/?https://github.com/r72cccp/MetaStudioNewsApiTest/blob/master/public/coverage/index.html).
 
-* Deployments
+## Deployments
   Master branch of this application accessible on Heroku.
   POST User Authenticate request available on [https://metastudio-news-api.herokuapp.com/authenticate](https://metastudio-news-api.herokuapp.com/authenticate),
   for example.
-
-
