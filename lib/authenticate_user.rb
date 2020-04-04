@@ -12,14 +12,6 @@ class AuthenticateUser
     ::JsonWebToken.encode(user_id: user.id) if user
   end
 
-  # def self.jwt!(params)
-  #   @existed_user ||= User.find_or_create!(
-  #     email: params[:email],
-  #     name: params[:name]
-  #   )
-  #   ::JsonWebToken.encode(user_id: @existed_user.id) if @existed_user
-  # end
-
   private
 
   attr_accessor :email, :password

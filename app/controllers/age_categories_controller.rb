@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class AgeCategoriesController < ApplicationController
-  # GET /age_categories
+class AgeCategoriesController < ApiController
   def index
     @age_categories = AgeCategory.all
 

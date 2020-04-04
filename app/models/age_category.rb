@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AgeCategory
   include ActiveModel::Validations
   include ActiveModel::Conversion
