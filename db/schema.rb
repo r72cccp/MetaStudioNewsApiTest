@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_063406) do
+ActiveRecord::Schema.define(version: 2020_04_04_093756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "news", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "origin", null: false
+    t.string "origin_url"
+    t.text "html_content", null: false
+    t.string "age_category", null: false
+    t.string "news_category", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["age_category"], name: "index_news_on_age_category"
+    t.index ["news_category"], name: "index_news_on_news_category"
+    t.index ["user_id"], name: "index_news_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -24,4 +39,5 @@ ActiveRecord::Schema.define(version: 2020_04_02_063406) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "news", "users"
 end

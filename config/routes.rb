@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :news
   resources :age_categories, only: %i[index]
   resources :news_categories, only: %i[index]
   resources :users, only: %i[create]
