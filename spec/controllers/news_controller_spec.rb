@@ -41,7 +41,24 @@ RSpec.describe NewsController, type: :controller do
       it 'must return serialized news instance' do
         request.headers.merge! headers
         post :create, params: valid_params
-        expect(JSON.parse(response.body.as_json)['title']).to eq(new_news.title)
+        expect(JSON.parse(response.body)['title']).to eq(new_news.title)
+      end
+    end
+
+    context 'when update existed news' do
+      it 'must response with updated news' do
+        new_news_title = 'new News title'
+        request.headers.merge! headers
+        put :update, params: { id: news.id, title: new_news_title }
+        expect(JSON.parse(response.body)['title']).to eq(new_news_title)
+      end
+    end
+
+    context 'when destroy existed news' do
+      it 'must response with status ok' do
+        request.headers.merge! headers
+        delete :destroy, params: { id: news.id }
+        expect(response).to have_http_status(:ok)
       end
     end
   end
