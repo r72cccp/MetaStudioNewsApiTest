@@ -24,8 +24,15 @@ module NewsApi
     Dotenv.load('config/.env.local')
 
     config.api_only = true
+    config.middleware.use Rack::Attack
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.debug_exception_response_format = :api
     config.load_defaults 6.0
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: %i[get post options]
+      end
+    end
   end
 end
